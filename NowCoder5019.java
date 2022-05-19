@@ -1,5 +1,3 @@
-package com.huawei.test.demo.nowcoder;
-
 import java.util.Scanner;
 
 public class Nowcoder519 {
