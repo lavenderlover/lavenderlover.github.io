@@ -1,5 +1,3 @@
-package com.huawei.test.demo.nowcoder;
-
 import java.util.LinkedList;
 import java.util.Queue;
 import java.util.Scanner;
