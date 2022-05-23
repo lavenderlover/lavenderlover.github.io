@@ -8,26 +8,17 @@ public class NowCoder0522Demo1 {
         int maxNum = n * n;
         int[][] matrix = new int[n][n];
         int[][] dirs = new int[][]{{0, 1}, {1, 0}, {0, -1}, {-1, 0}};
-
         int num = 1;
         matrix[0][0] = num;
-        int dirIndex = 0;
-        int x = 0;
-        int y = 0;
-        int[] dir = dirs[dirIndex];
+        int dirIndex = 0, x = 0, y = 0;
         while (++num <= maxNum) {
-            if (isValidPosition(x, y, dir, n) || matrix[x + dir[0]][y + dir[1]] != 0) {
-                dirIndex = dirIndex == 3 ? 0 : dirIndex + 1;
-                dir = dirs[dirIndex];
+            if (isValidPosition(x, y, dirs[dirIndex], n) || matrix[x + dirs[dirIndex][0]][y + dirs[dirIndex][1]] != 0) {
+                dirIndex = (dirIndex + 1) % 4;
             }
-            x += dir[0];
-            y += dir[1];
+            x += dirs[dirIndex][0];
+            y += dirs[dirIndex][1];
             matrix[x][y] = num;
-            if (num == maxNum) {
-                break;
-            }
         }
-
         return matrix;
     }
 
